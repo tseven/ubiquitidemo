@@ -25,8 +25,6 @@ rp(options)
     .catch(function (err) {
         // API call failed...
         router.get('/', function(req, res, next) {
-            // var loadError = new Error("Doh, couldn't load the json");
-            // console.log(loadError);
             console.log(err);
 
             res.render('error', err);
