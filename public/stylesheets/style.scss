@@ -1,0 +1,21 @@
+body{
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+a{
+  color: #00B7FF
+}
+
+.product--block{
+  list-style: none;
+  padding-bottom: 4rem;
+  .product-title, .product-price, .product-tags, .product-sku{
+    display: block;
+
+  }
+  .product-title{
+    font-size: 1.3rem;
+  }
+}
