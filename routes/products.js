@@ -16,7 +16,7 @@ rp(options)
         console.log('User has %d products', jsonData.products.length);
         /* GET home page. */
         router.get('/', function(req, res, next) {
-            res.render('products', { title: 'Express' });
+            res.render('products', {products: jsonData.products});
         });
 
 

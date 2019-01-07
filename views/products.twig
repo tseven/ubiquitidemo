@@ -3,4 +3,14 @@
 {% block body %}
   <h1>{{title}}</h1>
   <p>Products list {{title}}</p>
+
+
+  <ul>
+    {% for product in products %}
+      <li>
+        {%  include 'product-block.twig' with product %}
+      </li>
+    {% endfor %}
+  </ul>
+
 {% endblock %}
