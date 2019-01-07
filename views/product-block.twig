@@ -1,1 +1,16 @@
-{{ product.title }}
+{% set firstImage = product.images | first %}
+{% set firstImageSrc = firstImage.src | replace({'.png': "_300x300.png"}) %}
+{% set firstVariant = product.variants | first %}
+{% set firstPrice = firstVariant.price %}
+{% set firstAvailable = firstVariant.available %}
+
+{% set availableClass = "isAvailable" %}
+{% if firstAvailable == false %}
+    {% set availableClass = "notAvailable" %}
+{% endif %}
+
+<li class="{{ availableClass }}">
+    <img src="{{ firstImageSrc }}" alt=""/>
+    <span class="product--block-title">{{ product.title }}</span>
+    <span class="product--block-price">${{ firstPrice }}</span>
+</li>
