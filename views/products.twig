@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{title}}</h1>
+  <a href="/">Go home</a>
+
+
+  <ul>
+    {% for product in products %}
+
+        {%  include 'product-block.twig' with product %}
+
+    {% endfor %}
+  </ul>
+
+{% endblock %}
