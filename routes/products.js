@@ -13,14 +13,10 @@ var options = {
 
 rp(options)
     .then(function (jsonData) {
-        console.log('User has %d products', jsonData.products.length);
-        /* GET home page. */
         router.get('/', function(req, res, next) {
+        console.log('fetching json from shopify');
             res.render('products', {products: jsonData.products});
         });
-
-
-
     })
     .catch(function (err) {
         // API call failed...
