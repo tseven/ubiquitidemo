@@ -5,10 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+/**
+ * Cache all routes for 1 minute
+*/
+var apicache = require('apicache');
+var cache = apicache.middleware;
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var app = express();
+
+app.use(cache('1 minute'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

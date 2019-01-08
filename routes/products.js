@@ -15,7 +15,7 @@ rp(options)
     .then(function (jsonData) {
         router.get('/', function(req, res, next) {
         console.log('fetching json from shopify');
-            res.render('products', {products: jsonData.products});
+            res.render('products', {title: "Products List", products: jsonData.products});
         });
     })
     .catch(function (err) {
